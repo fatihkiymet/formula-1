@@ -1,0 +1,46 @@
+@mixin season-theme($theme) {
+    $component-theme: (
+        season-background-color: null,
+        season-background-font-size: 1.4rem,
+        season-race-content-bg-color: #fff,
+        season-race-title-bg-color: map-get($theme, primary),
+        season-race-title-bg-color-highlighted: lighten(map-get($theme, primary), 20%),
+        season-race-title-text-color: map-get($theme, accent-text-color),
+        season-race-title-font-size: 1.5rem,
+        season-race-title-font-weight: 600,
+    );
+
+    $configuration: map-merge(
+        $component-theme,
+        $theme
+    );
+
+    .season-component {
+        background-color: map-get($configuration, season-background-color);
+        font-size: map-get($configuration, season-font-size);
+
+        &-race {
+            &.highlighted {
+                .season-component-race-title {
+                    background-color: map-get($configuration, season-race-title-bg-color-highlighted);
+                }
+            }
+        }
+        
+        &-race-title {
+            background-color: map-get($configuration, season-race-title-bg-color);
+            color: map-get($configuration, season-race-title-text-color);
+            font-size: map-get($configuration, season-race-title-font-size);
+            font-weight: map-get($configuration, season-race-title-font-weight);
+        }
+
+        &-race-content {
+            background-color: map-get($configuration, season-race-content-bg-color);
+
+            label {
+                font-weight: 600;
+                color: map-get($configuration, text-lighter-1);
+            }
+        }
+    }
+}

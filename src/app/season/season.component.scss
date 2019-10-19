@@ -1,0 +1,20 @@
+.season-component {
+    display: block;
+
+    &-race {
+        margin-bottom: 8px;
+
+        &-title {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 16px;
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 12px;
+        }
+    }
+}

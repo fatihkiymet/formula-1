@@ -1,0 +1,25 @@
+@mixin winners-theme($theme) {
+    $component-theme: (
+        winners-background-color: #FFFFFF,
+        winners-font-size: 1.4rem,
+        winners-winner-nationality-text-color: map-get($theme, text-lighter-2),
+        winners-winner-nationality-font-size: 1.2rem
+    );
+
+    $configuration: map-merge(
+        $component-theme,
+        $theme
+    );
+
+    .winners-component {
+        background-color: map-get($configuration, winners-background-color);
+        font-size: map-get($configuration, winners-font-size);
+
+        .winner {
+            &-nationality {
+                color: map-get($configuration, winners-winner-nationality-text-color);
+                font-size: map-get($configuration, winners-winner-nationality-font-size);
+            }
+        }
+    }
+}

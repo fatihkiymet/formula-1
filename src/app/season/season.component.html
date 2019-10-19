@@ -1,0 +1,15 @@
+<div class="season-component-races">
+    <ng-container *ngFor="let race of races; trackBy: trackByRace">
+        <div class="season-component-race" [ngClass]="{ highlighted: isWinner(race.Results[0].Driver) }">
+            <h3 class="season-component-race-title">{{ race.raceName }}</h3>
+            <section class="season-component-race-content">
+                <app-driver-card [firstName]="race.Results[0].Driver.givenName"
+                    [lastName]="race.Results[0].Driver.familyName" [nationality]="race.Results[0].Driver.nationality"
+                    [age]="race.Results[0].Driver.dateOfBirth | age:season">
+                </app-driver-card>
+                <div><label>Date: </label>{{ race.date }}</div>
+                <div><label>Track: </label>{{race.Circuit.circuitName}}</div>
+            </section>
+        </div>
+    </ng-container>
+</div>

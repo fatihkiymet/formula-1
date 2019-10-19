@@ -1,0 +1,14 @@
+<div class="winner flex-row" *ngFor="let winner of winners; trackBy: trackByStandingRow" aria-role="button"
+    (click)="showSeasonDetail(winner.season)">
+    <div class="winner-season">{{ winner.season }}</div>
+    <div class="winner-name">
+        <span>{{ winner.DriverStandings[0].Driver.givenName }}
+            {{ winner.DriverStandings[0].Driver.familyName }}</span>
+        <div class="winner-nationality">{{ winner.DriverStandings[0].Driver.nationality }}<span class="winner-age">,
+                Age: {{ winner.DriverStandings[0].Driver.dateOfBirth | age:winner.season }}</span>
+        </div>
+    </div>
+
+
+    <div class="winner-constructor">{{ winner.DriverStandings[0].Constructors[0].name }}</div>
+</div>

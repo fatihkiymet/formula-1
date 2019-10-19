@@ -1,0 +1,26 @@
+.winners-component {
+    display: block;    
+    flex: 1;
+    max-width: 500px;
+
+    .winner {
+        display: flex;
+        height: 35px;
+        cursor: pointer;     
+
+        > div {
+            align-content: center;
+            padding: 8px;
+            justify-content: flex-start;
+        }
+
+        &-season {
+            width: 50px;
+        }
+
+        &-name {
+            width: 200px;
+        }
+    }
+
+}

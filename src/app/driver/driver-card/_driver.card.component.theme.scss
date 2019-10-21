@@ -1,7 +1,8 @@
 @mixin driver-card-theme($theme) {
     $component-theme: (        
-        driver-card-font-size: 1.4rem,
+        driver-card-font-size: 1.2rem,
         driver-card-nationality-font-size: 1.2rem,
+        driver-card-name-font-weight: 600,
         driver-card-nationality-text-color: map-get($theme, text-lighter-2),
         driver-card-age-font-size: 1.2rem,
         driver-card-age-text-color: map-get($theme, text-lighter-2),
@@ -18,6 +19,7 @@
         &-name {
             color: map-get($configuration, driver-card-name-text-color);
             font-size: map-get($configuration, driver-card-name-font-size);
+            font-weight: map-get($configuration, driver-card-name-font-weight);
         }
 
         &-nationality {

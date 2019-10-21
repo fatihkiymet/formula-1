@@ -7,12 +7,18 @@
         <div class="season-component-race" [ngClass]="{ highlighted: isWinner(race.Results[0].Driver) }">
             <h3 class="season-component-race-title">{{ race.raceName }}</h3>
             <section class="season-component-race-content">
-                <app-driver-card *ngIf="race.Results[0].Driver as driver" [firstName]="driver.givenName"
-                    [lastName]="driver.familyName" [nationality]="driver.nationality"
-                    [age]="driver.dateOfBirth | age:season">
-                </app-driver-card>
-                <div><label>Date: </label>{{ race.date }}</div>
-                <div><label>Track: </label>{{race.Circuit.circuitName}}</div>
+                <div class="flex-row">
+                    <label>Winner</label>
+                    <app-driver-card *ngIf="race.Results[0].Driver as driver" [firstName]="driver.givenName"
+                        [lastName]="driver.familyName" [nationality]="driver.nationality"
+                        [age]="driver.dateOfBirth | age:season">
+                    </app-driver-card>
+                </div>
+                <div><label>Constructor</label>{{ race.Results[0].Constructor.name }}</div>
+                <div><label>Location</label>{{ race.Circuit.Location.locality }} - {{ race.Circuit.Location.country }}
+                </div>
+                <div><label>Date</label>{{ race.date }}</div>
+                <div><label>Track</label>{{race.Circuit.circuitName}}</div>
             </section>
         </div>
     </ng-container>

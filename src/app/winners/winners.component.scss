@@ -1,25 +1,30 @@
 .winners-component {
     display: block;    
     flex: 1;
-    max-width: 500px;
+
+    .winner-races-header {
+        padding: 8px 12px;
+    }
+
+    .winner-header {
+        line-height: 2.2;
+        padding: 3px 4px;
+    }
 
     .winner {
         display: flex;
-        height: 35px;
+        padding: 6px 0;
+
         cursor: pointer;     
+        border-bottom: {
+            style: solid;
+            width: 1px;
+        }
 
         > div {
             align-content: center;
-            padding: 8px;
+            padding: 0 8px;
             justify-content: flex-start;
-        }
-
-        &-season {
-            width: 50px;
-        }
-
-        &-name {
-            width: 200px;
         }
     }
 

@@ -1,6 +1,11 @@
 .season-component {
     display: block;
 
+    .season-component-header {
+        padding: 8px 12px;
+    }
+
+
     &-race {
         margin-bottom: 8px;
 

@@ -1,7 +1,10 @@
 @mixin core-theme($theme) {
     $component-theme: (
         body-bg-color: #efefeb,
-        page-content-bg-color: null
+        h1-font-weight: 700,
+        h1-font-size: 3.2rem,
+        h2-font-weight: 700,
+        h2-font-size: 2.6rem
     );
 
     $configuration: map-merge(
@@ -13,7 +16,15 @@
         background-color: map-get($configuration, body-bg-color);
     }
 
-    .app-page-content {
-        background-color: map-get($configuration, page-content-bg-color);
+    h1 {
+        font-weight: map-get($configuration, h1-font-weight);
+        font-size: map-get($configuration, h1-font-size);
+        line-height: 1.7;
+    }
+
+    h2 {
+        font-weight: map-get($configuration, h2-font-weight);
+        font-size: map-get($configuration, h2-font-size);;
+        line-height: 1.7;
     }
 }

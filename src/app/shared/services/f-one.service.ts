@@ -44,7 +44,6 @@ export class FOneService {
 
 	getSeason(season: string): Observable<Race[]> {
 		return this.http.get<SeasonResponseModel>(this.configService.getSeasonUrl(season)).pipe(
-			tap(console.log),
 			filter(data => !!data.MRData && !!data.MRData.RaceTable && !!data.MRData.RaceTable.Races),
 			map(data => data.MRData.RaceTable.Races),
 			catchError(err => {
@@ -57,7 +56,6 @@ export class FOneService {
 
 	getRaceResultsBySeason(season: string): Observable<Race[]> {
 		return this.http.get<RaceResultsResponseModel>(this.configService.getRaceResultsBySeason(season)).pipe(
-			tap(console.log),
 			filter(data => !!data.MRData && !!data.MRData.RaceTable && !!data.MRData.RaceTable.Races),
 			map(data => data.MRData.RaceTable.Races),
 			catchError(err => {

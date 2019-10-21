@@ -1,9 +1,21 @@
+@import "../../assets/styles/color-palette.scss";
+
 @mixin winners-theme($theme) {
-    $component-theme: (
-        winners-background-color: #FFFFFF,
+    $component-theme: (        
+        winners-bg-color: $white,
+        winners-text-color: map-get($theme, primary-text-color),
         winners-font-size: 1.4rem,
-        winners-winner-nationality-text-color: map-get($theme, text-lighter-2),
-        winners-winner-nationality-font-size: 1.2rem
+        winners-winner-header-bg-color: map-get($theme, accent), 
+        winners-winner-header-font-size: null,
+        winners-winner-header-font-weight: 600,
+        winners-winner-header-text-color: map-get($theme, accent-text-color), 
+        winners-winner-bg-color: $white,
+        winners-winner-border-color: map-get($theme, border-color),
+        winners-winner-text-color: map-get($theme, text-lighter-2),
+        winners-winner-font-size: 1.2rem,
+        winners-winner-bg-color-hover: darken($white, 10%),
+        winners-winner-season-font-size: 1.2rem,
+        winners-winner-season-text-color: map-get($theme,text-lighter-2)
     );
 
     $configuration: map-merge(
@@ -11,14 +23,32 @@
         $theme
     );
 
-    .winners-component {
-        background-color: map-get($configuration, winners-background-color);
+    .winners-table {     
+        background-color: map-get($configuration, winners-bg-color);;
+        color: map-get($configuration, winners-text-color);
         font-size: map-get($configuration, winners-font-size);
 
+        .winner-header {
+            background-color: map-get($configuration, winners-winner-header-bg-color);
+            color: map-get($configuration, winners-winner-header-text-color); 
+            font-size: map-get($configuration, winners-winner-header-font-size);
+            font-weight: map-get($configuration, winners-winner-header-font-weight);
+        }
+
         .winner {
-            &-nationality {
-                color: map-get($configuration, winners-winner-nationality-text-color);
-                font-size: map-get($configuration, winners-winner-nationality-font-size);
+            background-color: map-get($configuration, winners-winner-bg-color);
+            border-color: map-get($configuration, winners-winner-border-color);
+            transition: background-color 0.5s ease;
+            color: map-get($configuration, winners-winner-text-color);
+            font-size: map-get($configuration, winners-winner-font-size);
+
+            &:hover {
+                background-color: map-get($configuration, winners-winner-bg-color-hover);
+            }
+            
+            &-season {
+                color: map-get($configuration, winners-winner-season-text-color);
+                font-size: map-get($configuration, winners-winner-season-font-size);
             }
         }
     }

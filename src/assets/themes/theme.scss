@@ -1,21 +1,23 @@
-$primary: #212121;
-$accent: #ffc328;
-$warn: #ff5858;
+@import "../styles/color-palette.scss";
 
-$text-color: #212121;
-$white: #fff;
-$dark-cyan: #008b8b;
+$primary: $white;
+$accent: $red;
+$text-color: $black;
 
 $theme: (
 	primary: $primary,
 	accent: $accent,
-	warn: $warn,
-	primary-text-color: darken($white, 10%),
+
+	primary-text-color: $black,
+	hightlighted-text-color: $dark-cyan,
+
 	accent-text-color: $white,
     
     text-color: $text-color,
 	text-lighter-1: lighten($text-color, 10%),
 	text-lighter-2: lighten($text-color, 20%),
 	text-lighter-3: lighten($text-color, 30%),
-	text-lighter-4: lighten($text-color, 40%)
+	text-lighter-4: lighten($text-color, 40%),
+
+	border-color: #dfdfdf
 );

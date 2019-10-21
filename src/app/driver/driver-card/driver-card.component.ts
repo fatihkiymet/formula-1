@@ -9,7 +9,7 @@ import { Component, Input, HostBinding, ChangeDetectionStrategy, ViewEncapsulati
 })
 export class DriverCardComponent {
 
-	@HostBinding("class.driver-card-component") hostCssClass = true;
+	@HostBinding("class.driver-card") hostCssClass = true;
 
 	@Input() firstName: string | undefined;
 	@Input() lastName: string | undefined;

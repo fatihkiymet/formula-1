@@ -1,5 +1,7 @@
 @import "./assets/themes/theme.scss";
 @import "./assets/themes/core.theme";
+@import "./app/app.component.theme";
+@import "./app/driver/driver-card/driver.card.component.theme";
 @import "./app/winners/winners.component.theme";
 @import "./app/season/season.component.theme";
 
@@ -83,21 +85,43 @@ a {
 	justify-content: space-between;
 }
 
-.app-tabs {
-	display: flex;
-	overflow: hidden;
-	max-width: 100%;
-	flex-flow: row nowrap;	
-
-	&-label {
-		display: flex;
-		flex: 1 0 auto;
-		padding: 0 12px;
-		height: 40px;
-		align-items: center;
-	}	
+.w-140 {
+	width: 140px;
 }
 
+.w-120 {
+	width: 120px;
+}
+
+.w-100 {
+	width: 100px;
+}
+
+.w-90 {
+	width: 90px;
+}
+
+.w-80 {
+	width: 80px;
+}
+
+.w-70 {
+	width: 70px;
+}
+
+.w-60 {
+	width: 60px;
+}
+
+@media only screen and (max-width: 400px) {
+	.xs-hidden {
+		display: none;
+	}
+}
+
+
 @include core-theme($theme);
+@include app-theme($theme);
+@include driver-card-theme($theme);
 @include winners-theme($theme);
 @include season-theme($theme);

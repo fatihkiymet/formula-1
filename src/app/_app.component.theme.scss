@@ -1,0 +1,17 @@
+@mixin app-theme($theme) {
+    $component-theme: (
+        header-bg-color: map-get($theme, primary),
+        header-content-bg-color: null,
+    );
+
+    $configuration: map-merge(
+        $component-theme,
+        $theme
+    );
+
+    .app-component {
+        &-header {
+            background-color: map-get($configuration, header-bg-color);
+        }
+    }
+}

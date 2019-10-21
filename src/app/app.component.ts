@@ -16,6 +16,8 @@ import {
 export class AppComponent {
 	title = "formula app";
 
+	@HostBinding("class.app-component") hostCssClass = true;
+
 	constructor(
 		private changeDetector: ChangeDetectorRef
 	) { }

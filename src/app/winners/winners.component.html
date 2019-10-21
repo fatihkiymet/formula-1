@@ -1,14 +1,26 @@
-<div class="winner flex-row" *ngFor="let winner of winners; trackBy: trackByStandingRow" aria-role="button"
-    (click)="showSeasonDetail(winner.season)">
-    <div class="winner-season">{{ winner.season }}</div>
-    <div class="winner-name">
-        <span>{{ winner.DriverStandings[0].Driver.givenName }}
-            {{ winner.DriverStandings[0].Driver.familyName }}</span>
-        <div class="winner-nationality">{{ winner.DriverStandings[0].Driver.nationality }}<span class="winner-age">,
-                Age: {{ winner.DriverStandings[0].Driver.dateOfBirth | age:winner.season }}</span>
-        </div>
+<div class="winner-races-header">
+    <h1>F1 Winners List</h1>
+    <h2>Seasons Between 2005-2015</h2>
+</div>
+<div class="winners-table">
+    <div class="winner-header flex-row">
+        <div class="w-70 flex-col">Season</div>
+        <div class="w-140 flex-col ">Driver</div>
+        <div class="w-100 flex-col">Team</div>
+        <div class="w-100 flex-col xs-hidden">Races win</div>
     </div>
-
-
-    <div class="winner-constructor">{{ winner.DriverStandings[0].Constructors[0].name }}</div>
+    <div class="winner flex-row" *ngFor="let winner of winners; trackBy: trackByStandingRow" aria-role="button"
+        (click)="showSeasonDetail(winner.season)">
+        <div class="flex-col winner-season w-60">
+            {{ winner.season }}
+        </div>
+        <div class="w-140 flex-col">
+            <app-driver-card *ngIf="winner.DriverStandings[0].Driver as driver " [firstName]="driver.givenName"
+                [lastName]="driver.familyName" [nationality]="driver.nationality"
+                [age]="driver.dateOfBirth | age:winner.season">
+            </app-driver-card>
+        </div>
+        <div class="winner-team w-100 flex-col">{{ winner.DriverStandings[0].Constructors[0].name }}</div>
+        <div class="flex-col w-100 winner-races-win xs-hidden">{{ winner.DriverStandings[0].wins }}</div>
+    </div>
 </div>

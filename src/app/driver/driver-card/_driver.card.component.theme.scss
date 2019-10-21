@@ -1,0 +1,33 @@
+@mixin driver-card-theme($theme) {
+    $component-theme: (        
+        driver-card-font-size: 1.4rem,
+        driver-card-nationality-font-size: 1.2rem,
+        driver-card-nationality-text-color: map-get($theme, text-lighter-2),
+        driver-card-age-font-size: 1.2rem,
+        driver-card-age-text-color: map-get($theme, text-lighter-2),
+    );
+
+    $configuration: map-merge(
+        $component-theme,
+        $theme
+    );
+
+    .driver-card {
+        font-size: map-get($configuration, driver-card-font-size);
+
+        &-name {
+            color: map-get($configuration, driver-card-name-text-color);
+            font-size: map-get($configuration, driver-card-name-font-size);
+        }
+
+        &-nationality {
+            color: map-get($configuration, driver-card-nationality-text-color);
+            font-size: map-get($configuration, driver-card-nationality-font-size);
+        }
+
+        &-age {
+            color: map-get($configuration, driver-card-age-text-color);
+            font-size: map-get($configuration, driver-card-age-font-size);
+        }
+    }
+}

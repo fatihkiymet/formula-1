@@ -1,6 +1,15 @@
 # Formula App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) latest version.
+
+Prerequsites
+
+* npm version 5.6.0 or greater 
+
+* You must install latest version of angular cli from the specified github url above to run the application or if you have installed 
+npm you can use `npm i -g angular-cli` command to install.
+
+* The official Node.js version that is supported is 10.9 or greater
 
 ## Development server
 

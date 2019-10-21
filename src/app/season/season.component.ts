@@ -19,7 +19,6 @@ export class SeasonComponent implements OnInit {
 
 	season: string | undefined;
 	races: Race[] | undefined;
-	selectedTab: string | undefined;
 
 	private data$$: Subscription;
 
@@ -32,7 +31,6 @@ export class SeasonComponent implements OnInit {
 	ngOnInit() {
 		const { season } = this.route.snapshot.params;
 		this.season = season;
-
 		if (!season) {
 			return;
 		}
@@ -56,10 +54,6 @@ export class SeasonComponent implements OnInit {
 	isWinner(driver: Driver) {
 		return this.season && this.service.winners && this.service.winners[this.season] &&
 			this.service.winners[this.season].driverId === driver.driverId;
-	}
-
-	setSelectedTab(tab: string) {
-		this.selectedTab = tab;
 	}
 
 }

@@ -1,5 +1,5 @@
 <div>
-    <span>{{ firstName }} {{ lastName }}</span>
-    <div>{{ nationality }}, <span>Age: </span>{{ age }}</div>
-    <div *ngIf="team">{{ team }}</div>
+    <span class="driver-card-name">{{ firstName }} {{ lastName }}</span>
+    <div class="driver-card-nationality">{{ nationality }}, <span class="driver-card-age">Age: {{ age }}</span></div>
+    <div class="driver-card-team" *ngIf="team">{{ team }}</div>
 </div>
